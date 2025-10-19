@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>短视频直链解析下载</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>短视频直链解析下载</h1>
+      <p class="sub">粘贴抖音/快手等分享文本，自动提取链接并解析，可下载封面与视频</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <label for="shareText" class="label">分享文本</label>
+        <textarea id="shareText" class="textarea" rows="5" placeholder="在这里粘贴包含视频分享链接的文本，例如抖音/快手分享内容"></textarea>
+
+        <div class="actions">
+          <button id="parseBtn" class="btn primary">提取并解析</button>
+          <button id="clearBtn" class="btn">清空</button>
+        </div>
+
+        <div id="status" class="status"></div>
+      </section>
+
+      <section id="resultSection" class="card hidden">
+        <div class="meta">
+          <div class="cover">
+            <img id="coverImg" alt="封面预览" />
+          </div>
+          <div class="info">
+            <div class="row">
+              <span class="label">标题</span>
+              <span id="titleText" class="value"></span>
+            </div>
+            <div class="row">
+              <span class="label">作者</span>
+              <span id="authorName" class="value"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="downloads">
+          <button id="downloadCoverBtn" class="btn">下载封面</button>
+          <button id="downloadVideoBtn" class="btn primary">下载视频</button>
+        </div>
+
+        <details class="tip">
+          <summary>下载失败或在手机上无法直接下载？</summary>
+          <ul>
+            <li>iOS Safari：会在新标签打开，长按图片/视频选择“保存图片/保存视频”。</li>
+            <li>部分安卓浏览器：若未自动下载，也可长按选择保存。</li>
+            <li>电脑浏览器：将自动下载到默认下载目录。</li>
+          </ul>
+        </details>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>仅用于学习与测试，请勿用于任何违法用途</small>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
