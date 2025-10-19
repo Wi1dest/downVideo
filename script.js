@@ -113,7 +113,8 @@
     }
     setStatus('开始下载' + (kind === 'image' ? '封面' : '视频') + '...');
     try {
-      const res = await fetch(url, {
+      const downloadUrl = kind === 'video' ? ('/api/download?url=' + encodeURIComponent(url)) : url;
+      const res = await fetch(downloadUrl, {
         method: 'GET',
         mode: 'cors',
       });
