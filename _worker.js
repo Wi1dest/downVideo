@@ -70,12 +70,7 @@ export default {
       }
     }
 
-    // 其他路径走默认响应或静态资源（在 Pages 环境中由静态托管处理）
-    return new Response('OK', {
-      headers: {
-        'Access-Control-Allow-Origin': origin,
-        'Vary': 'Origin',
-      }
-    });
+    // 其他路径交给 Pages 静态资源处理
+    return env.ASSETS.fetch(request);
   }
 };
