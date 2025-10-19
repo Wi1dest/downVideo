@@ -12,7 +12,7 @@
     downloadVideoBtn: document.getElementById('downloadVideoBtn'),
   };
 
-  const API_BASE = 'https://dy.lushuyan.dpdns.org/video/share/url/parse?url=';
+  const API_BASE = '/api/parse?url=';
 
   const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent);
   const isAndroid = /Android/.test(navigator.userAgent);
